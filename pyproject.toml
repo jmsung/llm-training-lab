@@ -1,0 +1,19 @@
+[project]
+name = "llm-training-lab"
+version = "0.1.0"
+description = "Hands-on pretraining and post-training (SFT, DPO, GRPO) of small LLMs, with costs and before/after numbers."
+requires-python = ">=3.11"
+dependencies = []
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/llm_training_lab"]
+
+[dependency-groups]
+dev = [
+    "pre-commit>=4.7.0",
+    "pytest>=9.2.0",
+]

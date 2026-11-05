@@ -1,0 +1,17 @@
+# cb/knowledge/pins.yaml — adopted knowledge-base cards (pull model, ADR 0011)
+# A card is materialized into cb/knowledge/source/ ONLY if it is pinned here.
+# Every pin needs a `why:` — the artifact that cites it. That artifact is the receipt.
+# A pull-mode repo SEARCHES the whole corpus (/kb-query is unscoped, ADR 0011 D7);
+# the knowledge-base downstream.yaml entry only enumerates it for the fan-out.
+# Domains decide neither what is copied nor what is searched here.
+#
+# A new project starts with no adopted cards. They arrive one of two ways:
+#   • /kb-answer   — cites a corpus card in a page it writes here; the citation
+#     is the receipt and the pin is written with that page as `why:`.
+#   • /kb-ingest   — a paper you meet while working goes upstream first, then is
+#     pinned here provisionally (`why: [ingest:<workstream>]`, ADR 0011 D8) until
+#     a page cites it. Provisional pins expire (KS_PROVISIONAL_TTL_DAYS).
+# `kb-sync pins --audit` reports drift; `--gc` retires pins nothing justifies.
+version: 1
+mode: pull
+pins: []
